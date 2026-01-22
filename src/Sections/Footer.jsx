@@ -11,7 +11,8 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-black py-12 lg:py-20 text-white font-sans" id="footer">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 flex flex-col lg:flex-row items-start lg:items-start justify-between gap-8 lg:gap-0">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-0">
+
         {/* LEFT : BRAND */}
         <div className="max-w-[360px] w-full lg:w-auto">
           <div className="flex items-center gap-3 mb-6">
@@ -42,44 +43,49 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* RIGHT : FLEX CONTAINER (ALIGNED RIGHT) */}
-        <div className="flex flex-col sm:flex-row lg:flex-row gap-y-8 sm:gap-y-0 lg:gap-x-24 sm:gap-x-12 text-left w-full lg:w-auto lg:ml-auto">
-          {/* QUICK LINKS */}
-          <div className="min-w-[120px]">
-            <h4 className="font-bold text-xl mb-8">Quick Links</h4>
-            <ul className="flex flex-col gap-4 text-[16px]">
-              {["Home", "About", "Sports", "Gallery", "Contact"].map((item) => (
-                <li
-                  key={item}
-                  className="hover:text-white/80 transition cursor-pointer"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
+        {/* RIGHT : FLEX CONTAINER (UNCHANGED DESKTOP) */}
+        <div className="flex flex-col lg:flex-row gap-y-8 lg:gap-x-24 text-left w-full lg:w-auto lg:ml-auto">
+
+          {/* MOBILE ROW: QUICK + LEGAL */}
+          <div className="flex flex-row justify-between gap-8 lg:flex-row lg:gap-x-24">
+
+            {/* QUICK LINKS */}
+            <div className="min-w-[120px]">
+              <h4 className="font-bold text-xl mb-8">Quick Links</h4>
+              <ul className="flex flex-col gap-4 text-[16px]">
+                {["Home", "About", "Sports", "Gallery", "Contact"].map((item) => (
+                  <li
+                    key={item}
+                    className="hover:text-white/80 transition cursor-pointer"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* LEGAL */}
+            <div className="min-w-[140px]">
+              <h4 className="font-bold text-xl mb-8">Legal</h4>
+              <ul className="flex flex-col gap-4 text-[16px]">
+                {[
+                  "Privacy Policy",
+                  "Terms of Service",
+                  "Refund Policy",
+                  "Cancellation Policy",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="hover:text-white/80 transition cursor-pointer"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* LEGAL */}
-          <div className="min-w-[140px]">
-            <h4 className="font-bold text-xl mb-8">Legal</h4>
-            <ul className="flex flex-col gap-4 text-[16px]">
-              {[
-                "Privacy Policy",
-                "Terms of Service",
-                "Refund Policy",
-                "Cancellation Policy",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="hover:text-white/80 transition cursor-pointer"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* CONTACT */}
+          {/* CONTACT (UNCHANGED) */}
           <div className="min-w-[200px] flex-1">
             <h4 className="font-bold text-xl mb-8">Contact Us</h4>
             <ul className="flex flex-col gap-6 text-[16px]">
@@ -102,6 +108,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
         </div>
       </div>
     </footer>
